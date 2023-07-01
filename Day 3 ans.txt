@@ -1,0 +1,31 @@
+Compare two objects in Javascript 
+let obj1={name:"Person 1", age:5};
+let obj2={age:5, name:"Person 1"};
+
+ans:
+let obj1={name:"Person 1", age:5};
+//let obj2={name:"Person 1", age:5};
+let obj2={age:5, name:"Person 1"};
+
+function objComparision()
+{
+if (Object.keys(obj1).length==Object.keys(obj2).length)
+{
+for (var keys1 in Object.keys(obj1).sort())
+{
+for (var keys2 in Object.keys(obj2).sort())
+{
+if(obj1[keys1] === obj2[keys2])
+{
+return true;
+}
+else{
+return false;
+}
+}
+}
+}
+return false;
+}
+const status=objComparision();
+console.log(status);
