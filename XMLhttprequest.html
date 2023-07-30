@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RestAPI</title>
+</head>
+<body>
+    <script>
+     var xhr=new XMLHttpRequest();
+     var method="GET";
+     var url="https://restcountries.com/v3.1/all";
+     xhr.open(method,url);
+     xhr.onload=function(){
+       if (xhr.status===200){
+        var CountriesDetails=JSON.parse(xhr.responseText);
+        for(var i=0; i<CountriesDetails.length;i++){
+            console.log(CountriesDetails[i]);
+            console.log(CountriesDetails[i].flags);
+            console.log(CountriesDetails[i].name.common);
+            console.log(CountriesDetails[i].region);
+            console.log(CountriesDetails[i].subregion);
+            console.log(CountriesDetails[i].population);
+
+        }
+       }
+       else{
+        console.log("Request failed" +" "+ xhr.status);
+       }
+     }
+     xhr.send();
+</script> 
+</body>
+</html>
