@@ -1,4 +1,4 @@
-Compare two objects in Javascript 
+1]Compare two objects in Javascript 
 let obj1={name:"Person 1", age:5};
 let obj2={age:5, name:"Person 1"};
 
